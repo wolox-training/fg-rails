@@ -56,3 +56,6 @@ end
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'rubocop', require: false
+
+gem 'devise_token_auth'
+
