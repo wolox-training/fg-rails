@@ -1,21 +1,16 @@
 # frozen_string_literal: true
 
 require 'rails_helper'
+require 'spec_helper'
 
 describe Book, type: :model do
-
-  subject(:book) { build(:book) }
+  subject(:book) { create(:book) }
 
   it { is_expected.to be_valid }
-  it { is_expected.to validate_presence_of(:year) }
-
-  describe '#generate_verification_code' do
-    context 'When the user is created' do
-      it 'generates a random verification code' do
-        book.save!
-        expect(book.year).to be_present
-      end
-    end
-  end
-
+  it { should validate_presence_of :year }
+  it { should validate_presence_of :title }
+  it { should validate_presence_of :genre }
+  it { should validate_presence_of :author }
+  it { should validate_presence_of :editor }
+  it { should validate_presence_of :image }
 end
